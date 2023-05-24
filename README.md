@@ -1,4 +1,5 @@
 <h2 align="center">LOL Prefessional Match Calendar Subscription</h2>
+*备份仓库，如果原仓库删除，以下内容可直接把 TankNee 改为 ATa0ist 使用*
 利用GitHub提供的自动化能力，每天自动抓取LPL以及LDL的比赛数据，并通过CDN来提供webcal链接，以此来实现自动化日历的效果。
 部分日历可能不支持使用链接导入？可以使用一些第三方软件来订阅日历链接。
 
@@ -13,7 +14,7 @@
 
 如何获取订阅日历链接：
 
-现在可以使用网站来快速制定比赛订阅：https://tanknee.github.io/LOL_Game_Subscription
+现在可以使用网站来快速制定比赛订阅：https://tanknee.github.io/LOL_Game_Subscription 
 
 ### Web网页
 
