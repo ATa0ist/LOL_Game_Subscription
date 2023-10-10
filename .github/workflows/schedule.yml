@@ -13,9 +13,9 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v3
             - name: Install Node.js, NPM
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v3
               with:
-                  node-version: 14
+                  node-version: 18
             - name: "Install dependencies"
               run: npm install
             - name: "Working"
@@ -33,9 +33,17 @@ jobs:
               continue-on-error: true
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-            - name: "Create Release"
-              uses: elgohr/Github-Release-Action@v4
+            - name: Create Release
+              id: create_release
+              uses: actions/create-release@v1
               env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
               with:
-                  title: LPLEveryDayUpdate
+                tag_name: ${{ github.ref }}
+                release_name: Release ${{ github.ref }}
+                body: |
+                  Changes in this Release
+                  - First Change
+                  - Second Change
+                draft: false
+                prerelease: false
